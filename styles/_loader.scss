@@ -1,0 +1,86 @@
+@use "mixins";
+
+@mixin section {
+  section {
+    @include mixins.size(min(100vw, 100vw), 100vh);
+    @include mixins.grid;
+    background: transparent;
+
+    div {
+      gap: 5px;
+      @include mixins.flex(column);
+
+      div {
+        img {
+          width: 250px;
+          @media only screen and (width <= 850px) {
+            width: 180px;
+          }
+          @media only screen and (width <= 750px) {
+            width: 150px;
+          }
+          @media only screen and (width <= 550px) {
+            width: 120px;
+          }
+          @media only screen and (width <= 480px) {
+            width: 90px;
+          }
+        }
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        width: 100%;
+        text-align: center;
+        @media only screen and (width <= 750px) {
+          font-size: 30px;
+        }
+        @media only screen and (width <= 550px) {
+          font-size: 25px;
+        }
+        @media only screen and (width <= 480px) {
+          font-size: 18px;
+        }
+      }
+      .loader2 {
+        @include mixins.size(200px, 150px);
+        @include mixins.flex;
+        gap: 5px;
+        padding-inline: 50px;
+        @media only screen and (width <= 750px) {
+          transform: scale(0.85);
+        }
+        @media only screen and (width <= 550px) {
+          transform: scale(0.75);
+        }
+        @media only screen and (width <= 480px) {
+          transform: scale(0.65);
+        }
+
+        span {
+          width: 10px;
+          height: 60px;
+          @include mixins.size(10px, 60px);
+          display: inline-block;
+          border-radius: 15px;
+          border-radius: calc(2s + 2s);
+
+          $children: 1, 2, 3, 4, 5, 6, 7, 8;
+          $i: 0.15;
+
+          //assigning each succssive span its delay time
+          @each $child in $children {
+            &:nth-child(#{$child}) {
+              @include mixins.styleloader(#{calc(calc($child - 1) * $i)}s);
+            }
+          }
+        }
+      }
+    }
+  }
+  p {
+    color: white;
+  }
+}

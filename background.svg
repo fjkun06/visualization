@@ -1,0 +1,18 @@
+<svg id="exe" fill="none" preserveAspectRatio="none" viewBox="0 0 84 16" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <linearGradient id="galaxy" x1="50%" y1="0%" x2="50%" y2="100%">
+
+      <stop offset="0%" stop-color="#2D3436">
+        <animate attributeName="stop-color" values="#2D3436; #494d5f; #2D3436" dur="4s" repeatCount="indefinite"></animate>
+      </stop>
+
+      <stop offset="100%" stop-color="#494d5f">
+        <animate attributeName="stop-color" values="#494d5f; #2D3436; #494d5f" dur="4s" repeatCount="indefinite"></animate>
+      </stop>
+
+    </linearGradient>
+  </defs>
+
+  <rect width="84" height="16" fill="url(#galaxy)" />
+</svg>

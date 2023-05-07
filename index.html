@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="logo.ico">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Data Visualization Assignment 👾</title>
+</head>
+
+<body>
+  <main>
+    <!----------------------------Loader Section------------------------------------------>
+    <section id="loader" class="fadeout">
+      <div>
+        <div class="">
+          <image src="logo.svg" alt="Logo" />
+        </div>
+        <p class="">DATA VISUALIZATION ASSIGNMENT</p>
+        <div class="loader2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </section>
+    <section id="body">
+      <nav>
+        <image src="logo.svg" alt="Logo" />
+        <p class="">DATA VISUALIZATION ASSIGNMENT</p>
+      </nav>
+
+      <main>
+        <section id="filters">
+          <aside id="year">
+            <span id="yearh"><span id="yeah">Filter by Year 2011-12</span>
+              <span id="close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <circle id="c1" r="7.5" cx='8' cy="8" fill="transparent" stroke-width="1" stroke="white" />
+                  <g id="g1" transform="scale(0.75) translate(3,2)">
+                    <path id="cp1" fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                    <path id="cp2" fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                  </g>
+                </svg>
+              </span>
+            </span>
+
+
+          </aside>
+          <aside id="subject">
+            <span id="subjecth"><span id="subj">Filter by Subject BIO</span>
+              <span id="closer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <circle id="c2" r="7.5" cx='8' cy="8" fill="transparent" stroke-width="1" stroke="white" />
+                  <g id="g2" transform="scale(0.75) translate(3,2)">
+                    <path id="cpc1" fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                    <path id="cpc2" fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+
+                  </g>
+                </svg>
+              </span>
+            </span>
+
+          </aside>
+        </section>
+
+
+        <section class="graphboard year">
+          <svg width="100%" height="100%" viewBox="0 0 700 500" id="s1">
+          </svg>
+
+          <svg width="100%" height="100%" viewBox="0 0 700 500" id="s2">
+
+          </svg>
+        </section>
+      </main>
+
+    </section>
+
+  </main>
+  <script src="scripts/d3.v7.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/filter.js"></script>
+  <script src="scripts/data2.js"></script>
+  <script src="scripts/data.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+//sets display to grid
+@mixin grid {
+  display: grid;
+  place-items: center;
+  @content;
+}
+
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  place-items: center;
+  @content;
+}
+//sets width and height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin styleloader($delay){
+  background-color: white;
+  animation: loader2 2s ease infinite $delay;
+  box-shadow: 0 0 20px #000;
+}

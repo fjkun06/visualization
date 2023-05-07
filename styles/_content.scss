@@ -1,0 +1,193 @@
+@use "mixins";
+@mixin body {
+  #body {
+    @include mixins.flex;
+    display: none;
+    @include mixins.size(inherit);
+    @include mixins.size(100vw, auto);
+    align-self: flex-start;
+    /***************************************Navbar Section******************************/
+    nav {
+      align-self: flex-start;
+      @include mixins.size(inherit, 100px);
+      box-shadow: 0 0 20px #2d3436;
+      // border: 1px solid red;
+      @include mixins.flex;
+      gap: 20px;
+      padding-inline: 50px;
+      @media only screen and (width <= 750px) {
+        padding-inline: 40px;
+      }
+      @media only screen and (width <= 550px) {
+        padding-inline: 30px;
+      }
+      @media only screen and (width <= 480px) {
+        padding-inline: 20px;
+      }
+      img {
+        width: 70px;
+      }
+      p {
+        font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+        font-size: 30px;
+        // width: 100%;
+        text-align: center;
+        @media only screen and (width <= 750px) {
+          font-size: 25px;
+        }
+        @media only screen and (width <= 550px) {
+          font-size: 22px;
+        }
+        @media only screen and (width <= 480px) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    /***************************************Content Section******************************/
+    main {
+      gap: 50px;
+      @include mixins.flex;
+      justify-content: center;
+      // border: 1px solid red;
+      @media only screen and (width < 1650px) {
+        @include mixins.flex(column);
+        // @include mixins.size(inherit, auto);
+        // height: auto;
+        justify-content: center;
+      }
+      /*****************Filter Section******************************/
+      #filters {
+        // border: 1px solid lemonchiffon;
+        @include mixins.flex;
+        padding: 1rem;
+        gap: 2rem;
+        width: auto;
+        height: auto;
+
+        @media only screen and (width < 890px) {
+          @include mixins.flex(column);
+          align-items: flex-start;
+        }
+        aside {
+          overflow: hidden;
+          @include mixins.size(400px, 370px);
+          align-self: flex-start;
+          border-radius: 10px;
+          box-shadow: 0 0 20px #2d3436;
+          @include mixins.flex(column);
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding-inline-start: 15px;
+          padding-top: 10px;
+          gap: 10px;
+          transition: height 0.5s ease-in-out;
+
+          #yearh,
+          #subjecth {
+            text-transform: capitalize;
+            color: whitesmoke;
+            width: inherit;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            @include mixins.flex;
+
+            span#close,
+            #closer {
+              @include mixins.size(20px);
+              @include mixins.flex(column);
+              cursor: pointer;
+              svg {
+                @include mixins.size(inherit);
+                transition: all 0.25s ease-in-out;
+                g path:d {
+                  transition: all 0.25s ease-in-out;
+                }
+              }
+            }
+            span {
+              width: auto;
+            }
+          }
+
+          span {
+            width: 100%;
+            gap: 10px;
+
+            input[type="radio"]:checked {
+              background-color: #2d3436;
+            }
+            input[type="radio"] {
+              margin-top: 1.5px;
+              border: 2px solid white;
+              box-shadow: 0 0 0 1px #2d3436;
+              appearance: none;
+              border-radius: 50%;
+              @include mixins.size(12px);
+              background-color: lightblue;
+              transition: all ease-in 0.2s;
+            }
+
+            label {
+              font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+              color: whitesmoke;
+              display: flex;
+              flex-direction: row-reverse;
+              gap: 1rem;
+              span.legspan {
+                @include mixins.size(40px, 20px);
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /*****************List Section******************************/
+    .graphboard {
+      box-shadow: 0 0 20px #2d3436;
+      @include mixins.size(700px, 400px);
+      // @include mixins.size(600px, auto);
+      // padding: 10px 0px 10px 30px;
+      @include mixins.flex(column);
+      align-items: flex-start;
+      gap: 10px;
+      @media only screen and (width < 1650px) {
+        // width: 94vw;
+      }
+      @media only screen and (width < 890px) {
+        height: auto;
+        padding: 1rem 0rem;
+        width: 94vw;
+      }
+      svg {
+        @include mixins.size(inherit);
+        // fill: white;
+        background-color: #fff;
+        border-radius: 5px;
+        // @include mixins.size(auto);
+        & > * {
+          // transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+@keyframes fadein {
+  to {
+    opacity: 1;
+  }
+}
+
+.jahr {
+  display: flex;
+  @include mixins.flex;
+  opacity: 0;
+  // transition: opacity 2s ease-in;
+  animation: fadein 0.55s ease-in 0s 1 forwards;
+}
+.yeartoggle {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
